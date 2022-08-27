@@ -1,0 +1,54 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+ 
+:root:not([uidensity=compact]) #back-button>.toolbarbutton-icon {
+    background-color: initial !important;
+    border: initial !important;
+}
+ 
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+    display: none !important;
+}
+ 
+.tab-background {
+    background: #CACACA; // #1b1b1f;
+    border: none !important;
+    border-left: 0 solid #090909 !important;
+    border-right: 0 solid #090909 !important;
+    margin: -2px 8px !important;
+    -webkit-transform: perspective(100px) rotateX(30deg) !important;
+    -moz-transform: perspective(100px) rotateX(30deg) !important;
+}
+ 
+.tabbrowser-tab[selected="true"] .tab-background {
+    background: #FFFFFF !important; // #303030 !important;
+}
+ 
+.tab-content {
+    padding: 0 17px !important;
+}
+ 
+#tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforeselected-visible]::after,
+#tabbrowser-tabs[movingtab]>.tabbrowser-tab[visuallyselected]::before,
+.tabbrowser-tab[visuallyselected]::after {
+    border-color: var(--tabs-border-color);
+    margin-top: 0;
+    margin-bottom: 1px;
+    opacity: 1;
+    border: none !important;
+}
+ 
+[tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
+.tabbrowser-tab:hover::after,
+#tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
+    border: none !important;
+}
+ 
+.tab-text.tab-label {
+    text-shadow: initial !important;
+    color: black !important;
+    font-style: unset;
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
